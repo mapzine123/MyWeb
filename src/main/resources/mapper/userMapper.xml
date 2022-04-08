@@ -12,4 +12,8 @@
     <select id="count" resultType="Integer">
         SELECT count(*) FROM user_info
     </select>
+
+    <delete id="delete" parameterType="UserDto">
+        DELETE FROM user_info WHERE (uid = #{uid} AND pwd = #{pwd} AND email = #{email})
+    </delete>
 </mapper>

@@ -23,4 +23,8 @@ public class UserDao {
     public int insert(UserDto dto) throws Exception {
         return session.insert(namespace + "insert", dto);
     }
+
+    public int delete(UserDto dto) throws Exception {
+        return session.delete(namespace + "delete", dto);
+    }
 }

@@ -27,7 +27,7 @@ public class UserDaoTest {
     @Test
     public void selectCount() throws Exception {
         int cnt = dao.selectCount();
-        assertTrue(cnt == 50);
+        assertTrue(cnt == 49);
     }
 
     @Test
@@ -39,5 +39,12 @@ public class UserDaoTest {
             rowCnt++;
         }
         assertTrue(rowCnt == 50);
+    }
+
+    @Test
+    public void delete() throws Exception {
+        UserDto deleteDto = new UserDto("name1", "1asdf", "mapzine1@naver.com");
+        int rowCnt = dao.delete(deleteDto);
+        assertTrue(rowCnt == 1);
     }
 }
