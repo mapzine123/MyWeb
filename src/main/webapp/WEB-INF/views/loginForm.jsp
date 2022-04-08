@@ -13,17 +13,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="<c:url value='/css/loginForm.css'">
-    <link rel="stylesheet" href="<c:url value='/css/reset.css'">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<c:url value='/css/reset.css'/>">
+    <link rel="stylesheet" href="<c:url value='/css/loginForm.css'/>">
 </head>
 <body>
-<div class="bodyContainer">
-<%--    상단 네비바--%>
-    <%@include file="jspf/navi.jspf"%>
 
+
+<div class="bodyContainer">
+    <%--    상단 네비바--%>
+    <%@include file="jspf/navi.jspf" %>
     <div class="login">
-        <h2>Login</h2>
+        <p>Login</p>
     </div>
     <div class="loginContainer">
         <!-- 회원 / 비회원 구분 -->
@@ -38,7 +38,9 @@
                 <input type="text" name="" placeholder="MEMBER ID" required>
                 <input type="password" name="" placeholder="PASSWORD" required>
                 <div class="checkboxContainer">
-                    <label for="security"><input type="checkbox" name="security" id="security" value=true>보안접속</label>
+                    <label for="security">
+                        <input type="checkbox" name="security" id="security" value=true>보안접속
+                    </label>
                 </div>
                 <a href="" class="loginBtn">로그인</a>
             </form>
