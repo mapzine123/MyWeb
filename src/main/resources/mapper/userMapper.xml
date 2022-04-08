@@ -5,4 +5,8 @@
     <insert id="register" parameterType="UserDto">
         INSERT INTO user_info VALUES (#{uid}, #{pwd}, #{email}, #{name}, now())
     </insert>
+
+    <select id="selectUser" parameterType="UserDto">
+        SELECT * FROM user_info WHERE (#{uid}, #{pwd}, #{email})
+    </select>
 </mapper>
