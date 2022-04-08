@@ -12,6 +12,19 @@ public class UserDto {
 
     public UserDto() {}
 
+    public UserDto(String uid, String pwd, String email) {
+        this.uid = uid;
+        this.pwd = pwd;
+        this.email = email;
+    }
+
+    public UserDto(String uid, String pwd, String email, String name) {
+        this.uid = uid;
+        this.pwd = pwd;
+        this.email = email;
+        this.name = name;
+    }
+
     public UserDto(String uid, String pwd, String email, String name, Date reg_date) {
         this.uid = uid;
         this.pwd = pwd;
