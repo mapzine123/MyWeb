@@ -15,15 +15,7 @@
 </head>
 <body>
 <div class="bodyContainer">
-	<div class="loginNav">
-		<a href="#">Login</a>
-		<a href="#">Join</a>
-		<a href="#">MyPage</a>
-		<a href="#">Order</a>
-		<a href="#">Cart</a>
-		<a href="#">Community</a>
-		<a href="#" class="menuIcon"><i class="fa fa-bars"></i></a>
-	</div>
+	<%@include file="jspf/navi.jspf"%>
 </div>
 </body>
 </html>

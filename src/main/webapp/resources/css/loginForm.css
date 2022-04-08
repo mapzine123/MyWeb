@@ -1,0 +1,129 @@
+.bodyContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+.login {
+
+}
+
+.login  h2 {
+    margin-bottom: 50px;
+}
+
+.loginContainer {
+    /* border: 2px solid black; */
+    width : 518px;
+    height : 847px;
+}
+
+.loginContainer > ul {
+    display: flex;
+}
+
+.loginContainer > ul > li {
+    width: 50%;
+    height: 52px;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 15px;
+    font-size : 14px;
+}
+.loginContainer > ul > li:first-child {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.loginContainer > ul > li:last-child {
+    border-right: none;
+}
+
+/* 회원, 비회원 선택시 밑줄 없어지게 */
+.nowSelected {
+    border-top: 1px solid black;
+    border-bottom: none;
+}
+
+.loginContainer > ul > li:not(.nowSelected) {
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid black;
+}
+
+.loginContainer > ul > li:first-child:not(.nowSelected) {
+    border-left : 1px solid #e0e0e0;
+}
+
+.loginContainer > ul > li:last-child:not(.nowSelected) {
+    border-right : 1px solid #e0e0e0;
+}
+
+.loginBox {
+    width : 518px;
+    height: 795px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-flow: column;
+    border: 1px solid black;
+    border-top: none;
+    padding-top : 100px;
+}
+
+input:not(input[type=checkbox]) {
+    display: block;
+}
+
+input[type=text], input[type=password] {
+    display: block;
+    width: 386px;
+    height: 50px;
+    margin-bottom : 5px;
+    border: 1px solid #e0e0e0;
+    padding-left : 8px;
+    font-size: 14px;
+}
+
+/* focus 시 placeholder 없어짐 */
+input:focus::placeholder {
+    color: transparent;
+}
+
+input[type=checkbox] {
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    padding: 15px 0 10px 0;
+}
+
+.checkboxContainer label {
+    font-size: 14px;
+}
+
+.loginBtn, .registerBtn {
+    width: 386px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginBtn {
+
+}
+
+.loginBtn:hover {
+    background-color: black;
+    color: white;
+    transition: .5s;
+}
+
+.registerBtn {
+    margin-top: 10px;
+    background-color: #e0e0e0;
+}
