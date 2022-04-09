@@ -28,4 +28,8 @@ public class LoginService {
     public UserDto searchUser(UserDto dto) throws Exception {
         return dao.select(dto);
     }
+
+    public UserDto loginUser(UserDto dto) throws Exception {
+        return dao.login(dto);
+    }
 }

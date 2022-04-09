@@ -12,6 +12,10 @@ public class UserDao {
     private String namespace = "com.firstSpring.dao.userMapper.";
 
 
+    public UserDto login(UserDto dto) throws Exception {
+        return session.selectOne(namespace + "login", dto);
+    }
+
     public UserDto select(UserDto dto) throws Exception {
         return session.selectOne(namespace + "select", dto);
     }

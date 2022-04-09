@@ -12,6 +12,11 @@ public class UserDto {
 
     public UserDto() {}
 
+    public UserDto(String uid, String pwd) {
+        this.uid = uid;
+        this.pwd = pwd;
+    }
+
     public UserDto(String uid, String pwd, String email) {
         this.uid = uid;
         this.pwd = pwd;
@@ -25,6 +30,8 @@ public class UserDto {
         this.name = name;
     }
 
+
+
     public UserDto(String uid, String pwd, String email, String name, Date reg_date) {
         this.uid = uid;
         this.pwd = pwd;
@@ -32,7 +39,6 @@ public class UserDto {
         this.name = name;
         this.reg_date = reg_date;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

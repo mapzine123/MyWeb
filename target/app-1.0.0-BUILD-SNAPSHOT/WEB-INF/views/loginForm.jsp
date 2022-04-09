@@ -34,19 +34,20 @@
 
         <!-- 로그인 정보 작성 -->
         <div class="loginBox">
-            <form id="loginForm" action="">
-                <input type="text" name="" placeholder="MEMBER ID" required>
-                <input type="password" name="" placeholder="PASSWORD" required>
+            <form id="loginForm" action="<c:url value='/login/login'/>" method="POST">
+                <input type="text" name="uid" placeholder="MEMBER ID" required>
+                <input type="password" name="pwd" placeholder="PASSWORD" required>
                 <div class="checkboxContainer">
                     <label for="security">
                         <input type="checkbox" name="security" id="security" value=true>보안접속
                     </label>
                 </div>
-                <a href="" class="loginBtn">로그인</a>
+                <a class="loginBtn">로그인</a>
             </form>
             <a href="" class="registerBtn">회원가입</a>
         </div>
     </div>
 </div>
+<script type="text/javascript" src="<c:url value='/js/loginForm.js'/>"></script>
 </body>
 </html>

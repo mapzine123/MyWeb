@@ -6,6 +6,10 @@
         INSERT INTO user_info VALUES (#{uid}, #{pwd}, #{email}, #{name}, now())
     </insert>
 
+    <select id="login" parameterType="UserDto" resultType="UserDto">
+        SELECT * FROM user_info WHERE (uid = #{uid} AND pwd = #{pwd})
+    </select>
+
     <select id="select" parameterType="UserDto" resultType="UserDto">
         SELECT * FROM user_info WHERE (uid = #{uid} AND pwd = #{pwd} AND email = #{email})
     </select>
