@@ -36,7 +36,7 @@ public class LoginController {
 
             session.setAttribute("uid", current.getUid());
             rattr.addFlashAttribute("msg", "LOG_OK");
-            return "redirect:/index";
+            return "redirect:/";
 
         } catch (Exception e) {
             e.printStackTrace();

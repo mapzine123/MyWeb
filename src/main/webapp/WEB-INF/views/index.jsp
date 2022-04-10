@@ -17,5 +17,11 @@
 <div class="bodyContainer">
 	<%@include file="jspf/navi.jspf"%>
 </div>
+<script>
+	let msg = "${msg}";
+	if(msg === "LOG_OK") {
+		alert("접속을 환영합니다.");
+	}
+</script>
 </body>
 </html>
