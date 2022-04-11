@@ -42,7 +42,7 @@ public class LoginController {
             e.printStackTrace();
             m.addAttribute("uid", dto.getUid());
             rattr.addFlashAttribute("msg", "LOG_ERR");
-            return "loginForm";
+            return "redirect:/login/login";
         }
     }
 }

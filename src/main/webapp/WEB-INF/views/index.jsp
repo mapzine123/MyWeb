@@ -1,5 +1,4 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -17,11 +16,14 @@
 <div class="bodyContainer">
 	<%@include file="jspf/navi.jspf"%>
 </div>
-<script>
-	let msg = "${msg}";
-	if(msg === "LOG_OK") {
-		alert("접속을 환영합니다.");
+<script type="text/javascript" charset="utf-8">
+if(${sessionScope.uid != null}) {
+		let msg = "${msg}";
+		if(msg === "LOG_OK") {
+			alert("${sessionScope.uid}" + "님 접속을 환영합니다.");
+		}
 	}
+
 </script>
 </body>
 </html>

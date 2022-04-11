@@ -49,5 +49,12 @@
     </div>
 </div>
 <script type="text/javascript" src="<c:url value='/js/loginForm.js'/>"></script>
+<script>
+    let msg = "${msg}";
+    if(msg === "LOG_ERR") {
+        alert("아이디나 패스워드가 다릅니다.");
+    }
+    console.log(msg);
+</script>
 </body>
 </html>
