@@ -44,7 +44,7 @@
                 </div>
                 <a class="loginBtn">로그인</a>
             </form>
-            <a href="" class="registerBtn">회원가입</a>
+            <a href="<c:url value='/login/register'/>" class="registerBtn">회원가입</a>
         </div>
     </div>
 </div>

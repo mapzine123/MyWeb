@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     let loginBtn = document.querySelector(".loginBtn");
-     loginBtn.addEventListener("click", login);
+    let registerBtn = document.querySelector(".registerBtn");
+    loginBtn.addEventListener("click", login);
 
      function login(event) {
          event.preventDefault();

@@ -45,5 +45,26 @@ public class LoginController {
             return "redirect:/login/login";
         }
     }
+
+    @GetMapping("/register")
+    public String register() {
+        return "registerForm";
+    }
+
+    @PostMapping("/register")
+    public String register(UserDto dto, Model m, RedirectAttributes rattr) {
+        try {
+            int rowCnt = loginService.register(dto);
+            if(rowCnt != 1) {
+                throw new Exception();
+            }
+            return "redirect:/login/login";
+        } catch (Exception e) {
+            e.printStackTrace();
+            rattr.addFlashAttribute("msg", "REG_ERR");
+            return "redirect:/registerForm";
+        }
+
+    }
 }
 
