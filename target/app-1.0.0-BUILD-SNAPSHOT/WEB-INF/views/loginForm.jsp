@@ -35,11 +35,11 @@
         <!-- 로그인 정보 작성 -->
         <div class="loginBox">
             <form id="loginForm" action="<c:url value='/login/login'/>" method="POST">
-                <input type="text" name="uid" placeholder="MEMBER ID" required>
+                <input type="text" name="uid" id="inputId" value="${cookie.uid.value}" placeholder="MEMBER ID" required>
                 <input type="password" name="pwd" placeholder="PASSWORD" required>
                 <div class="checkboxContainer">
-                    <label for="security">
-                        <input type="checkbox" name="security" id="security" value=true>보안접속
+                    <label for="rememberId">
+                        <input type="checkbox" name="rememberId" id="rememberId" value="on" ${empty cookie.uid.value ? "" : "checked"}>자동로그인
                     </label>
                 </div>
                 <a class="loginBtn">로그인</a>
@@ -53,6 +53,10 @@
     let msg = "${msg}";
     if(msg === "LOG_ERR") {
         alert("아이디나 패스워드가 다릅니다.");
+    }
+    if(msg === "REG_OK") {
+        let uid = document.querySelector("#inputId");
+        uid.value = "${userDto.uid}";
     }
     console.log(msg);
 </script>

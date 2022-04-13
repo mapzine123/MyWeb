@@ -52,5 +52,12 @@
     </div>
 </div>
 <script src="<c:url value='/js/registerForm.js'/>"></script>
+<script>
+    let msg = "${msg}";
+    console.log("${msg}")
+    if(msg === "REG_ERR") {
+        document.querySelector("#name").value = "${userDto.name}";
+    }
+</script>
 </body>
 </html>
