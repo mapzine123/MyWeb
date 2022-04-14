@@ -1,27 +1,27 @@
-hr {
-    border-top : 10px solid black;
+boy {
+    height: 2000px;
 }
-
 .bodyContainer {
     margin: 0 16px;
+    overflow: scroll;
 }
 
-.loginNav {
-    float: right;
-    font-family: 'Roboto Condensed', sans-serif;
-    overflow: hidden;
-}
+/*.loginNav {*/
+/*    float: right;*/
+/*    font-family: 'Roboto Condensed', sans-serif;*/
+/*    overflow: hidden;*/
+/*}*/
 
-.loginNav a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 14px 0;
-    padding-right : 16px;
-    font-size: 17px;
-}
+/*.loginNav a {*/
+/*    float: left;*/
+/*    color: black;*/
+/*    text-align: center;*/
+/*    padding: 14px 0;*/
+/*    padding-right : 16px;*/
+/*    font-size: 17px;*/
+/*}*/
 
-.loginNav a:not(:last-child)::after {
-    content : "|";
-    margin-left : 14px;
-}
+/*.loginNav a:not(:last-child)::after {*/
+/*    content : "|";*/
+/*    margin-left : 14px;*/
+/*}*/

@@ -1,8 +1,10 @@
 .loginNav {
     float: right;
-    background-color: black;
     font-family: 'Roboto Condensed', sans-serif;
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 .loginNav a {

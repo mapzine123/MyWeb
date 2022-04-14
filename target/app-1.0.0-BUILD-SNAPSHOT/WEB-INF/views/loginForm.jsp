@@ -58,7 +58,6 @@
         let uid = document.querySelector("#inputId");
         uid.value = "${userDto.uid}";
     }
-    console.log(msg);
 </script>
 </body>
 </html>

@@ -12,18 +12,13 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
+<%@include file="jspf/navi.jspf"%>
 <div class="bodyContainer">
-	<%@include file="jspf/navi.jspf"%>
+
 </div>
 <script type="text/javascript" charset="utf-8">
-if(${sessionScope.uid != null}) {
-		let msg = "${msg}";
-		if(msg === "LOG_OK") {
-			alert("${sessionScope.uid}" + "님 접속을 환영합니다.");
-		}
-	}
-
 </script>
 </body>
 </html>
