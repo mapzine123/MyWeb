@@ -19,6 +19,15 @@ public class BoardDto {
         this.bauthor = bauthor;
     }
 
+    public BoardDto(int bno, String btitle, String bcontent, String bauthor, int view_count, Date reg_date) {
+        this.bno = bno;
+        this.btitle = btitle;
+        this.bcontent = bcontent;
+        this.bauthor = bauthor;
+        this.view_count = view_count;
+        this.reg_date = reg_date;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
