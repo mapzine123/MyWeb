@@ -8,4 +8,9 @@
     <select id="view" parameterType="int">
         SELECT * FROM board WHERE bno = #{bno}
     </select>
+
+    <select id="viewList">
+        SELECT * FROM board
+        ORDER BY DESC
+    </select>
 </mapper>
