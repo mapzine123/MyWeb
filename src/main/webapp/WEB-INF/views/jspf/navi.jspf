@@ -13,6 +13,6 @@
     <a href="#">MyPage</a>
     <a href="#">Order</a>
     <a href="#">Cart</a>
-    <a href="#">Community</a>
+    <a href="<c:url value="/board/boardList" />">Community</a>
     <a href="#" class="menuIcon"><i class="fa fa-bars"></i></a>
 </div>
