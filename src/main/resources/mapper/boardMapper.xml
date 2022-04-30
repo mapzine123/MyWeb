@@ -8,9 +8,19 @@
     <select id="view" parameterType="int">
         SELECT * FROM board WHERE bno = #{bno}
     </select>
-
     <select id="viewList">
         SELECT * FROM board
         ORDER BY DESC
     </select>
+    <select id="count" resultType="int">
+        SELECT count(*) FROM board
+    </select>
+
+    <delete id="delete" parameterType="map">
+        DELETE FROM board WHERE bno = #{bno} and bauthor = #{bauthor}
+    </delete>
+
+    <delete id="deleteAll">
+        DELETE FROM board
+    </delete>
 </mapper>
