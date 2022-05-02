@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("board")
 public class BoardController {
     @Autowired
-    public BoardService boardService;
+    private BoardService boardService;
 
     @GetMapping("/boardList")
     public String openBoard(Model m) {
-        Board
         return "boardList";
     }
 }
