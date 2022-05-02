@@ -5,6 +5,8 @@ import com.firstSpring.app.domain.BoardDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BoardService {
     @Autowired
@@ -12,5 +14,9 @@ public class BoardService {
 
     public BoardDto viewBoard(int bno) {
         return dao.select(bno);
+    }
+
+    public List<BoardDto> viewBoardList() {
+        return dao.selectAll();
     }
 }

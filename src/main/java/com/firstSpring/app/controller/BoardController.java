@@ -16,6 +16,7 @@ public class BoardController {
 
     @GetMapping("/boardList")
     public String openBoard(Model m) {
+
         return "boardList";
     }
 }
