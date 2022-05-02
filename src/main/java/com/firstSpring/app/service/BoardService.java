@@ -12,11 +12,11 @@ public class BoardService {
     @Autowired
     private BoardDao dao;
 
-    public BoardDto viewBoard(int bno) {
+    public BoardDto viewBoard(int bno) throws Exception {
         return dao.select(bno);
     }
 
-    public List<BoardDto> viewBoardList() {
+    public List<BoardDto> viewBoardList() throws Exception {
         return dao.selectAll();
     }
 }

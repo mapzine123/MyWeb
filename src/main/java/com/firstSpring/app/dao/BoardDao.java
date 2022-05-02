@@ -14,27 +14,27 @@ public class BoardDao {
     private SqlSession session;
     private String namespace = "com.firstSpring.dao.boardMapper.";
 
-    public int insert(BoardDto dto) {
+    public int insert(BoardDto dto) throws Exception {
         return session.insert(namespace + "write", dto);
     }
 
-    public BoardDto select(int bno) {
+    public BoardDto select(int bno) throws Exception {
         return session.selectOne(namespace + "view", bno);
     }
 
-    public List<BoardDto> selectAll() {
+    public List<BoardDto> selectAll() throws Exception {
         return session.selectList(namespace + "viewList");
     }
 
-    public int deleteAll() {
+    public int deleteAll() throws Exception {
         return session.delete(namespace + "deleteAll");
     }
 
-    public int getCount() {
+    public int getCount() throws Exception {
         return session.selectOne(namespace + "count");
     }
 
-    public int delete(Map map) {
+    public int delete(Map map) throws Exception {
         return session.delete(namespace + "delete", map);
     }
 }

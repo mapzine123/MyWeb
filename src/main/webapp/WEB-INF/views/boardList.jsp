@@ -35,4 +35,7 @@
 </div>
 </body>
 <script src="<c:url value="js/boardJs.js"/>"></script>
+<script>
+    alert("hi");
+</script>
 </html>
