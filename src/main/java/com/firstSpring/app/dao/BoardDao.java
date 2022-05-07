@@ -15,7 +15,7 @@ public class BoardDao {
     private String namespace = "com.firstSpring.dao.boardMapper.";
 
     public int insert(BoardDto dto) throws Exception {
-        return session.insert(namespace + "write", dto);
+        return session.insert(namespace + "insert", dto);
     }
 
     public BoardDto select(int bno) throws Exception {
