@@ -1,6 +1,7 @@
 package com.firstSpring.app.dao;
 
 import com.firstSpring.app.domain.BoardDto;
+import com.firstSpring.app.domain.SearchCondition;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,6 +21,10 @@ public class BoardDao {
 
     public BoardDto select(int bno) throws Exception {
         return session.selectOne(namespace + "view", bno);
+    }
+
+    public List<BoardDto> searchSelectPage(SearchCondition sc) throws Exception {
+        return session.selectList(namespace + "searchSelectPage", sc);
     }
 
     public List<BoardDto> selectAll() throws Exception {
