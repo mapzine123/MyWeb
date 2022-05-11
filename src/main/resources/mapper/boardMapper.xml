@@ -46,5 +46,10 @@
         <include refid="searchCondition"/>
     </select>
 
-
+    <select id="searchResultCnt" parameterType="SearchCondition" resultType="Integer">
+        SELECT count(*)
+        FROM board
+        WHERE true
+        <include refid="searchCondition"/>
+    </select>
 </mapper>

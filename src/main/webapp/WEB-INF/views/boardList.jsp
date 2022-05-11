@@ -32,6 +32,25 @@
         </c:forEach>
         </tbody>
     </table>
+    <br/>
+    <div class="pagingContainer">
+        <div class="pagingNav">
+            <c:if test="${totalCnt == null || totalCnt == 0}">
+                <div>게시물이 없습니다.</div>
+            </c:if>
+            <c:if test="${totalCnt != null || totalCnt != 0}">
+                <c:if test="${ph.showPrev}">
+                    <a class="page" href="<c:url value='/board/boardList${ph.sc.getQueryString(ph.beginPage - 1)}'/>}"><</a>
+                </c:if>
+                <c:forEach var="i" begin="${ph.beginPage}" end="${ph.endPage}">
+                    <a class="page ${i == ph.sc.page ? "paging-active" : ""}" href="<c:url value="/board/list${ph.sc.getQueryString(i)}"/>">${i}</a>
+                </c:forEach>
+                <c:if test="${ph.showPrev}">
+                    <a class="page" href="<c:url value='/board/boardList${ph.sc.getQueryString(ph.engPage + 1)}'/>">></a>
+                </c:if>
+            </c:if>
+        </div>
+    </div>
 </div>
 </body>
 <script src="<c:url value="js/boardJs.js"/>"></script>
