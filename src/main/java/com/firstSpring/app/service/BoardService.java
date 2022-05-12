@@ -26,6 +26,10 @@ public class BoardService {
         return dao.searchSelectPage(sc);
     }
 
+    public int getSearchResultCnt(SearchCondition sc) throws Exception {
+        return dao.searchResultCnt(sc);
+    }
+
     public int clearBoard() throws Exception {
         return dao.deleteAll();
     }

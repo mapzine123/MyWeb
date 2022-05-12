@@ -31,6 +31,10 @@ public class SearchCondition {
         return getQueryString(page);
     }
 
+    public Integer getOffset() {
+        return (page - 1) * pageSize;
+    }
+
     @Override
     public String toString() {
         return "SearchCondition{" +

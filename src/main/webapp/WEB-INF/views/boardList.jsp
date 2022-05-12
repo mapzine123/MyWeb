@@ -12,6 +12,17 @@
 
 <body>
 <div class="bodyContainer">
+    <div class="searchContainer">
+        <form action="<c:url value='/board/boardList'/>" class="searchForm" method="get">
+            <select class="searchOption" name="option">
+                <option value="A" ${ph.sc.option=='A' || ph.sc.option=='' ? "selected" : ""}>제목 + 내용</option>
+                <option value="T" ${ph.sc.option=='T' ? "selected" : ""}>제목만</option>
+                <option value="W" ${ph.sc.option=='W' ? "selected" : ""}>작성자만</option>
+            </select>
+            <input type="text" name="keyword" class="searchInput" value="${ph.sc.keyword}" placeholder="검색어를 입력해주세요"/>
+            <input type="submit" class="searchButton" value="검색"/>
+        </form>
+    </div>
     <table class="boardList">
         <thead>
         <th>번호</th>
@@ -38,12 +49,12 @@
             <c:if test="${totalCnt == null || totalCnt == 0}">
                 <div>게시물이 없습니다.</div>
             </c:if>
-            <c:if test="${totalCnt != null || totalCnt != 0}">
+            <c:if test="${totalCnt != null && totalCnt != 0}">
                 <c:if test="${ph.showPrev}">
                     <a class="page" href="<c:url value='/board/boardList${ph.sc.getQueryString(ph.beginPage - 1)}'/>}"><</a>
                 </c:if>
                 <c:forEach var="i" begin="${ph.beginPage}" end="${ph.endPage}">
-                    <a class="page ${i == ph.sc.page ? "paging-active" : ""}" href="<c:url value="/board/list${ph.sc.getQueryString(i)}"/>">${i}</a>
+                    <a class="page ${i == ph.sc.page ? "paging-active" : ""}" href="<c:url value="/board/boardList${ph.sc.getQueryString(i)}"/>">${i}</a>
                 </c:forEach>
                 <c:if test="${ph.showPrev}">
                     <a class="page" href="<c:url value='/board/boardList${ph.sc.getQueryString(ph.engPage + 1)}'/>">></a>
@@ -55,6 +66,5 @@
 </body>
 <script src="<c:url value="js/boardJs.js"/>"></script>
 <script>
-    alert("hi");
 </script>
 </html>

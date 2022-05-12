@@ -27,6 +27,10 @@ public class BoardDao {
         return session.selectList(namespace + "searchSelectPage", sc);
     }
 
+    public int searchResultCnt(SearchCondition sc) throws Exception {
+        return session.selectOne(namespace + "searchResultCnt", sc);
+    }
+
     public List<BoardDto> selectAll() throws Exception {
         return session.selectList(namespace + "viewList");
     }
