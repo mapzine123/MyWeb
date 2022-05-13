@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판</title>
-    <link rel="stylesheet" href="<c:url value="/css/boardList.css"/>">
     <link rel="stylesheet" href="<c:url value="/css/reset.css"/>">
+    <link rel="stylesheet" href="<c:url value="/css/boardList.css"/>">
 </head>
 
 <body>
+<%@include file="jspf/navi.jspf"%>
+
 <div class="bodyContainer">
     <div class="searchContainer">
         <form action="<c:url value='/board/boardList'/>" class="searchForm" method="get">

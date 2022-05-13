@@ -1,3 +1,22 @@
+.bodyContainer {
+    margin-top: 53px;
+}
+.searchForm {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.searchInput {
+    width: 600px;
+    margin: 0 10px;
+}
+
+.searchButton {
+    width: 150px;
+    border-radius: 60px;
+}
+
 table {
     text-align: center;
     width: 100%;
@@ -23,4 +42,19 @@ tr > td:nth-child(4) {
 }
 tr > td:nth-child(5) {
     width: 10%;
+}
+
+.pagingContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.page {
+    font-size: 24px;
+    margin-left: 5px;
+}
+
+.page:first-child {
+    margin-left: 0;
 }
