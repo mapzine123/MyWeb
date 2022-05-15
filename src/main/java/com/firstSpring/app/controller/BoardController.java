@@ -21,7 +21,7 @@ public class BoardController {
     private BoardService boardService;
 
     @GetMapping("/boardList")
-    public String openBoard(SearchCondition sc, HttpServletRequest request, Model m) {
+    public String openBoard(SearchCondition sc, Model m) {
         try {
             int totalCnt = boardService.getSearchResultCnt(sc);
             PageHandler pageHandler = new PageHandler(totalCnt, sc);
@@ -35,5 +35,16 @@ public class BoardController {
         }
 
         return "boardList";
+    }
+
+    @GetMapping("/board")
+    public String viewBoard(int bno, Model m) {
+        try {
+            BoardDto boardDto = boardService.viewBoard(bno);
+            m.addAttribute("boardDto", boardDto);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "board";
     }
 }

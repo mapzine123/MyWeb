@@ -20,7 +20,7 @@ public class BoardDao {
     }
 
     public BoardDto select(int bno) throws Exception {
-        return session.selectOne(namespace + "view", bno);
+        return session.selectOne(namespace + "select", bno);
     }
 
     public List<BoardDto> searchSelectPage(SearchCondition sc) throws Exception {

@@ -13,6 +13,10 @@ public class BoardDto {
 
     public BoardDto() {}
 
+    public BoardDto(int bno) {
+        this.bno = bno;
+    }
+
     public BoardDto(String btitle, String bcontent, String bauthor) {
         this.btitle = btitle;
         this.bcontent = bcontent;

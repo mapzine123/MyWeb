@@ -35,12 +35,15 @@
         </thead>
         <tbody>
         <c:forEach var="boardDto" items="${list}">
-            <tr>
+            <tr class="boardTr">
                 <td>${boardDto.bno}</td>
-                <td>${boardDto.btitle}</td>
+                <td><a href="<c:url value="/board/board${ph.sc.queryString}&bno=${boardDto.bno}"/>">${boardDto.btitle}</a></td>
                 <td>${boardDto.bauthor}</td>
                 <td>${boardDto.view_count}</td>
                 <td>${boardDto.reg_date}</td>
+                <form class="boardForm" action="/board/board" method="GET">
+                    <hidden name="bno" value="${boardDto.bno}"/>
+                </form>
             </tr>
         </c:forEach>
         </tbody>
@@ -66,7 +69,7 @@
     </div>
 </div>
 </body>
-<script src="<c:url value="js/boardJs.js"/>"></script>
+<script src="<c:url value="js/boardList.js"/>"></script>
 <script>
 </script>
 </html>
