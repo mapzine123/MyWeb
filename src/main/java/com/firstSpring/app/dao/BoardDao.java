@@ -42,6 +42,9 @@ public class BoardDao {
     public int getCount() throws Exception {
         return session.selectOne(namespace + "count");
     }
+    public int increaseViewCount(int bno) throws Exception {
+        return session.update(namespace + "increaseViewCount", bno);
+    }
 
     public int delete(Map map) throws Exception {
         return session.delete(namespace + "delete", map);

@@ -5,6 +5,7 @@ import com.firstSpring.app.domain.BoardDto;
 import com.firstSpring.app.domain.SearchCondition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,9 @@ public class BoardService {
     @Autowired
     private BoardDao dao;
 
+    @Transactional
     public BoardDto viewBoard(int bno) throws Exception {
+        dao.increaseViewCount(bno);
         return dao.select(bno);
     }
 
