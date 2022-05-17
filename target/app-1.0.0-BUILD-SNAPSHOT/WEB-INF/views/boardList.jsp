@@ -24,6 +24,7 @@
             <input type="text" name="keyword" class="searchInput" value="${ph.sc.keyword}" placeholder="검색어를 입력해주세요"/>
             <input type="submit" class="searchButton" value="검색"/>
         </form>
+        <button class="writeBtn">글쓰기</button>
     </div>
     <table class="boardList">
         <thead>

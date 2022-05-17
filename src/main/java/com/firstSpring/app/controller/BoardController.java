@@ -20,6 +20,11 @@ public class BoardController {
     @Autowired
     private BoardService boardService;
 
+    @GetMapping("/write")
+    public String writeBoard() {
+        return "writeBoard";11
+    }
+
     @GetMapping("/boardList")
     public String openBoard(SearchCondition sc, Model m) {
         try {
