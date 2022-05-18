@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -21,8 +22,11 @@ public class BoardController {
     private BoardService boardService;
 
     @GetMapping("/write")
-    public String writeBoard() {
-        return "writeBoard";11
+    public String writeBoard(HttpSession session) {
+        if(session.getAttribute("uid") == null) {
+            return "loginForm";
+        }
+        return "writeBoard";
     }
 
     @GetMapping("/boardList")
