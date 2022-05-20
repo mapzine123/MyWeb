@@ -33,6 +33,10 @@ public class BoardService {
         return dao.searchResultCnt(sc);
     }
 
+    public int write(BoardDto dto) throws Exception {
+        return dao.insert(dto);
+    }
+
     public int clearBoard() throws Exception {
         return dao.deleteAll();
     }

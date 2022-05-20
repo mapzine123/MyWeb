@@ -42,9 +42,6 @@
                 <td>${boardDto.bauthor}</td>
                 <td>${boardDto.view_count}</td>
                 <td>${boardDto.reg_date}</td>
-                <form class="boardForm" action="/board/board" method="GET">
-                    <hidden name="bno" value="${boardDto.bno}"/>
-                </form>
             </tr>
         </c:forEach>
         </tbody>

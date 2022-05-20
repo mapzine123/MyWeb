@@ -17,6 +17,11 @@ public class BoardDto {
         this.bno = bno;
     }
 
+    public BoardDto(String btitle, String bcontent) {
+        this.btitle = btitle;
+        this.bcontent = bcontent;
+    }
+
     public BoardDto(String btitle, String bcontent, String bauthor) {
         this.btitle = btitle;
         this.bcontent = bcontent;
