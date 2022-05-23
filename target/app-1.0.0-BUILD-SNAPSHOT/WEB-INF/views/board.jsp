@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<c:url value='/css/board.css'/>">
 </head>
 <body>
+<%@include file="jspf/navi.jspf"%>
 <div class="bodyContainer">
     <div class="headerContainer">
         <h3 class="title">${boardDto.btitle}</h3>

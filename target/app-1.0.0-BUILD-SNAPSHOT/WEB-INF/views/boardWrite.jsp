@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="<c:url value='/css/boardWrite.css'/>">
-    <link rel="stylesheet" href="<c:url value='/css/reset.css'>">
+    <link rel="stylesheet" href="<c:url value='/css/reset.css'/>">
 </head>
 
 <body>
+<%@include file="jspf/navi.jspf"%>
 <div class="bodyContainer">
     <form action="<c:url value='/board/write'/>" method="POST">
         <input type="text" name="btitle">
@@ -23,5 +24,4 @@
 </div>
 <script src="script.js"></script>
 </body>
-
 </html>
