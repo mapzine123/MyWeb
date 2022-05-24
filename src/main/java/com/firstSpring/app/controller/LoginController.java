@@ -22,6 +22,12 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
+    @GetMapping("/logout")
+    public String logout(HttpSession session, Model m) {
+        session.removeAttribute("uid");
+        return "redirect:/";
+    }
+
     @GetMapping("/login")
     public String login() {
         return "loginForm";

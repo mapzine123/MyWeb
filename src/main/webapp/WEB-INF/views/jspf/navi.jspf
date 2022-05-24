@@ -9,9 +9,14 @@
 <script src="<c:url value='/js/navi.js'/>"></script>
 
 <div class="loginNav">
-    <a href="<c:url value='/login/login'/>">Login</a>
-    <a href="#">Join</a>
-    <a class="myPage" href="/user/myPage">MyPage</a>
+    <c:if test="${sessionScope.uid == null}">
+        <a href="<c:url value='/login/login'/>">Login</a>
+        <a href="<c:url value='/login/register'/>">Join</a>
+    </c:if>
+    <c:if test="${sessionScope.uid != null}">
+        <a href="<c:url value='/login/logout'/>">Logout</a>
+    </c:if>
+    <a class="myPage" href="<c:url value='/user/myPage'/>">MyPage</a>
     <a href="#">Order</a>
     <a href="#">Cart</a>
     <a href="<c:url value="/board/boardList" />">Community</a>
