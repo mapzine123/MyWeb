@@ -54,7 +54,7 @@
             </c:if>
             <c:if test="${totalCnt != null && totalCnt != 0}">
                 <c:if test="${ph.showPrev}">
-                    <a class="page" href="<c:url value='/board/boardList${ph.sc.getQueryString(ph.beginPage - 1)}'/>}"><</a>
+                    <a class="page" href=""><</a>
                 </c:if>
                 <c:forEach var="i" begin="${ph.beginPage}" end="${ph.endPage}">
                     <a class="page ${i == ph.sc.page ? "paging-active" : ""}" href="<c:url value="/board/boardList${ph.sc.getQueryString(i)}"/>">${i}</a>
