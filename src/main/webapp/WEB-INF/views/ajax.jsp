@@ -23,16 +23,17 @@
 
             $("#sendBtn").click(function() {
                 $.ajax({
-                    type:'POST',
-                    url: '/app/send',
-                    headers : {"content-type" : "application/json"},
-                    dataType : 'text',
-                    data : JSON.stringify(person),
-                    success : function(result) {
+                    type:'POST', // 전송 방식
+                    url: '/app/send', // 요청 URL
+                    headers : {"content-type" : "application/json"}, // 해더 값을 K,V 형태로 설정
+                    dataType : 'text', // 서버에서 받을 데이터 형식 (xml, json, script, html...)
+                    data : JSON.stringify(person), // 서버로 보낼 데이터
+                    success : function(result) { // 요청 성공시 실행되는 콜백함수
                         person2 = JSON.parse(result);
                         alert("received = " + result);
                         $("#data").html("name : " + person2.name + ", age : " + person2.age);
-                    }, error : function() {
+                    },
+                    error : function() { // 요청 실패시 실행되는 콜백함수
                         alert("error");
                     }
                 });
