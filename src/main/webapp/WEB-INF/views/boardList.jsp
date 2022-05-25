@@ -59,6 +59,7 @@
                 <c:forEach var="i" begin="${ph.beginPage}" end="${ph.endPage}">
                     <a class="page ${i == ph.sc.page ? "paging-active" : ""}" href="<c:url value="/board/boardList${ph.sc.getQueryString(i)}"/>">${i}</a>
                 </c:forEach>
+                <div>hi</div>
                 <c:if test="${ph.showPrev}">
                     <a class="page" href="<c:url value='/board/boardList${ph.sc.getQueryString(ph.engPage + 1)}'/>">></a>
                 </c:if>
