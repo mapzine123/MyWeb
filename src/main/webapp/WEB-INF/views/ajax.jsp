@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -37,6 +38,39 @@
                         alert("error");
                     }
                 });
+            });
+
+            $("#sendBtn").click(function() {
+               $.ajax({
+                   type: 'POST',
+                   url: '<c:url value="/ajax"/>',
+                   headers : {"content-type" : "application/json"},
+                   dataType: 'text',
+                   data : JSON.stringify(person),
+                   success : function(result) {
+                       person2 = JSON.parse(result);
+                       // 할일
+                   },
+                   error : function() {
+                       // 오류났을 시 할 일
+                   }
+               });
+            });
+
+            $("#sendBtn").mouseover(function() {
+               $.ajax({
+                   type: 'POST',
+                   url: '<c:url value="/ajax"/>',
+                   headers : {"content-type" : "application/json"},
+                   dataType: 'text',
+                   data: JSON.stringify(person),
+                   success : function(result) {
+                       person2 = JSON.parse(result);
+                   },
+                   error : function() {
+                       alert("오류");
+                   }
+               });
             });
         });
     </script>
