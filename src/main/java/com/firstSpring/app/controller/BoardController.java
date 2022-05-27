@@ -7,6 +7,9 @@ import com.firstSpring.app.service.BoardService;
 import org.apache.commons.fileupload.DiskFileUpload;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Iterator;
 import java.util.List;
 
@@ -78,6 +84,37 @@ public class BoardController {
     @GetMapping("/uploadImage")
     public String uploadImage() {
         return "imageTest";
+    }
+
+    @PostMapping("/upload")
+    public String handleUpload(HttpServletRequest request) {
+        try {
+            boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+
+            DiskFileItemFactory factory = new DiskFileItemFactory();
+            factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
+            factory.setSizeThreshold(DiskFileItemFactory.DEFAULT_SIZE_THRESHOLD);
+            factory.setFileCleaningTracker(null);
+
+            ServletFileUpload upload = new ServletFileUpload(factory);
+            List items = upload.parseRequest(request);
+
+            Iterator itr = items.iterator();
+            while(itr.hasNext()) {
+                FileItem item = (FileItem) itr.next();
+                if(!item.isFormField()) {
+                    try (
+                    InputStream is = item.getInputStream();
+                    OutputStream os = new FileOutputStream("file.mov");) {
+                        IOUtils.copy(is, os);
+                    }
+                }
+            }
+            return "success!";
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "error";
     }
 
     @PostMapping("/uploadImage")

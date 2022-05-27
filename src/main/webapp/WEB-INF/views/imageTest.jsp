@@ -12,9 +12,11 @@
     <title>Title</title>
 </head>
 <body>
-  <form action="<c:url value='/board/uploadImage'/>" method="post" enctype="multipart/form-data">
+  <form action="<c:url value='/image/upload'/>" method="post" enctype="multipart/form-data">
       <p>파일 : <input type="file" name="filename"></p>
       <p><input type="submit" value="파일올리기"></p>
   </form>
+
+<%-- 이미지경로 sql을 따로 만들어서, 게시물 번호를 key값으로 하여 불러오면 됨 --%>
 </body>
 </html>
