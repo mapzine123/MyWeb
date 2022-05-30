@@ -48,4 +48,12 @@ public class BoardService {
     public int deleteBoard(Map map) throws Exception {
         return dao.delete(map);
     }
+
+    public int increaseCommentCount(int bno) throws Exception {
+        return dao.increaseCommentCount(bno);
+    }
+
+    public int decreaseCommentCount(int bno) throws Exception {
+        return dao.decreaseCommentCount(bno);
+    }
 }

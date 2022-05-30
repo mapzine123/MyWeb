@@ -49,4 +49,12 @@ public class BoardDao {
     public int delete(Map map) throws Exception {
         return session.delete(namespace + "delete", map);
     }
+
+    public int increaseCommentCount(int bno) throws Exception {
+        return session.update(namespace + "increaseCommentCount", bno);
+    }
+
+    public int decreaseCommentCount(int bno) throws Exception {
+        return session.update(namespace + "decreaseCommentCount", bno);
+    }
 }

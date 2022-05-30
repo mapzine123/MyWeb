@@ -10,6 +10,7 @@ public class BoardDto {
     private String bauthor;
     private int view_count;
     private Date reg_date;
+    private int comment_count;
 
     public BoardDto() {}
 
@@ -35,6 +36,16 @@ public class BoardDto {
         this.bauthor = bauthor;
         this.view_count = view_count;
         this.reg_date = reg_date;
+    }
+
+    public BoardDto(int bno, String btitle, String bcontent, String bauthor, int view_count, Date reg_date, int comment_count) {
+        this.bno = bno;
+        this.btitle = btitle;
+        this.bcontent = bcontent;
+        this.bauthor = bauthor;
+        this.view_count = view_count;
+        this.reg_date = reg_date;
+        this.comment_count = comment_count;
     }
 
     @Override
