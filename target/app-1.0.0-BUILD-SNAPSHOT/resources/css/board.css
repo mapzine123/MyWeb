@@ -1,9 +1,3 @@
-hr {
-    border: 1px solid #f2f2f2;
-    width: 50%;
-    margin : 15px 0;
-}
-
 .bodyContainer {
     display: flex;
     justify-content: center;
@@ -11,13 +5,26 @@ hr {
     flex-flow: column;
 }
 
-.headerContainer {
-    margin-top: 100px;
+.boardContainer {
     width: 50%;
+    border: 2px solid #e5e5e5;
+    border-radius: 15px;
+    margin: 20px 0;
+    padding: 20px;
+    box-sizing: content-box;
+}
+
+.headerContainer {
+    margin-top: 10px;
+    width: 100%;
+    border-bottom: 1px solid #bcb8b1;
+    padding-bottom: 10px;
+    box-sizing: content-box;
 }
 
 .title {
     font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .nickname {
@@ -25,13 +32,113 @@ hr {
 }
 
 .regDate {
-
+    margin-right: 10px;
 }
 
 .viewCount {
+}
+
+.commentCount {
     float: right;
 }
 
-.contentBox {
-    width: 50%;
+.contentContainer {
+    width: 100%;
+    height: 50vh;
+    border-bottom: 1px solid #bcb8b1;
+    margin: 10px 0;
+}
+
+.commentContainer {
+    width: 100%;
+    text-align: left;
+}
+
+.commentSortContainer {
+    display: flex;
+    align-items: center;
+}
+
+.commentTitle {
+    display: inline;
+    font-weight: 700;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.commentSort > li {
+    float: left;
+}
+
+.commentSortBtn {
+    font-size: 14px;
+}
+.commentBox {
+    padding: 15px 0;
+}
+
+.commenter {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.comment {
+    font-size : 14px;
+}
+
+.commentInfo {
+    padding-bottom: 8px;
+    box-sizing: content-box;
+    border-bottom: 1px solid #bcb8b1;
+}
+
+.update {
+
+}
+
+.pCommentBtn {
+
+}
+
+.cInfo {
+    font-size: 12px;
+    color: #979797;
+}
+
+.commentSortBtn:first-child {
+    margin-right: 10px;
+}
+
+.commentWriteContainer {
+    border: 2px solid #b7b7b7;
+    border-radius: 10px;
+    padding: 10px 10px;
+    display: flex;
+    flex-flow: column;
+}
+
+.author {
+    font-weight: 600;
+}
+
+.commentSubmit {
+    float: right;
+    font-size: 18px;
+    color: #2f3e46;
+    font-weight: 600;
+}
+
+#commentTextarea {
+    border: none;
+    outline: none;
+    width: 100%;
+    text-align: left;
+    resize: none;
+    font-size: 14px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    padding-top: 10px;
+    box-sizing: content-box;
+    border-radius: 15px;
 }

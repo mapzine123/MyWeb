@@ -18,7 +18,7 @@ public class CommentService {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public int remove(Integer cno, Integer bno, String comment) throws Exception
-        return null;
+    public int remove(Integer cno, Integer bno, String comment) throws Exception {
+        return 1;
     }
 }

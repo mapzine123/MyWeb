@@ -1,13 +1,14 @@
 .loginNav {
-    float: right;
+    display: block;
+    width: 100%;
     font-family: 'Roboto Condensed', sans-serif;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    right: 0;
 }
 
-.loginNav a {
+.loginNav ul {
+    float: right;
+}
+
+.loginNav li {
     float: left;
     color: black;
     text-align: center;

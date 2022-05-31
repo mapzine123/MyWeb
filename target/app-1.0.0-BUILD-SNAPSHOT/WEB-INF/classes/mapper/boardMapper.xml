@@ -58,4 +58,22 @@
         WHERE true
         <include refid="searchCondition"/>
     </select>
+
+    <select id="commentCount" parameterType="BoardDto" resultType="int">
+        SELECT comment_count
+        FROM board
+        WHERE bno = ${bno}
+    </select>
+
+    <update id="increaseCommentCount" parameterType="int">
+        UPDATE board
+        SET commment_count = comment_count + 1
+        WHERE bno = ${bno};
+    </update>
+
+    <update id="decreaseCommentCount" parameterType="int">
+        UPDATE board
+        SET comment_count = comment_count - 1
+        WHERE bno = ${bno}
+    </update>
 </mapper>

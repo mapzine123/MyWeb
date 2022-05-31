@@ -1,24 +1,24 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<link rel="stylesheet" href="<c:url value='/css/reset.css'/>">
 <link rel="stylesheet" href="<c:url value='/css/navi.css'/>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="<c:url value='/js/navi.js'/>"></script>
 
 <div class="loginNav">
-    <c:if test="${sessionScope.uid == null}">
-        <a href="<c:url value='/login/login'/>">Login</a>
-        <a href="<c:url value='/login/register'/>">Join</a>
-    </c:if>
-    <c:if test="${sessionScope.uid != null}">
-        <a href="<c:url value='/login/logout'/>">Logout</a>
-    </c:if>
-    <a class="myPage" href="<c:url value='/user/myPage'/>">MyPage</a>
-    <a href="#">Order</a>
-    <a href="#">Cart</a>
-    <a href="<c:url value="/board/boardList" />">Community</a>
-    <a href="#" class="menuIcon"><i class="fa fa-bars"></i></a>
+    <ul>
+        <c:if test="${sessionScope.uid == null}">
+            <li><a href="<c:url value='/login/login'/>">Login</a></li>
+            <li><a href="<c:url value='/login/register'/>">Join</a></li>
+        </c:if>
+        <c:if test="${sessionScope.uid != null}">
+            <a href="<c:url value='/login/logout'/>">Logout</a>
+        </c:if>
+        <li><a class="myPage" href="<c:url value='/user/myPage'/>">MyPage</a></li>
+        <li><a href="#">Order</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="<c:url value="/board/boardList" />">Community</a></li>
+        <li><a href="#" class="menuIcon"><i class="fa fa-bars"></i></a></li>
+    </ul>
 </div>

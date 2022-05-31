@@ -1,9 +1,5 @@
-boy {
-    height: 2000px;
-}
 .bodyContainer {
     margin: 0 16px;
-    overflow: scroll;
 }
 
 /*.loginNav {*/

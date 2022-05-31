@@ -11,9 +11,8 @@
 </head>
 
 <body>
-<%@include file="jspf/navi.jspf"%>
-
 <div class="bodyContainer">
+    <%@include file="jspf/navi.jspf"%>
     <div class="searchContainer">
         <form action="<c:url value='/board/boardList'/>" class="searchForm" method="get">
             <select class="searchOption" name="option">
