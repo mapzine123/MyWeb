@@ -12,15 +12,18 @@
 </head>
 
 <body>
-<%@include file="jspf/navi.jspf"%>
 <div class="bodyContainer">
-    <form action="<c:url value='/board/write'/>" method="POST">
-        <input type="text" name="btitle">
-        <br>
-        <textarea id="textarea" name="bcontent"></textarea>
-        <br>
-        <input type="submit" value="글쓰기">
-    </form>
+    <%@include file="jspf/navi.jspf" %>
+    <div class="contentContainer">
+        <form action="<c:url value='/board/write'/>" method="POST">
+            <input type="text" name="btitle">
+            <br>
+            <textarea id="textarea" name="bcontent"></textarea>
+            <br>
+            <input type="submit" value="글쓰기">
+        </form>
+    </div>
+
 </div>
 <script src="script.js"></script>
 </body>

@@ -13,7 +13,7 @@
             <li><a href="<c:url value='/login/register'/>">Join</a></li>
         </c:if>
         <c:if test="${sessionScope.uid != null}">
-            <a href="<c:url value='/login/logout'/>">Logout</a>
+            <li><a href="<c:url value='/login/logout'/>">Logout</a></li>
         </c:if>
         <li><a class="myPage" href="<c:url value='/user/myPage'/>">MyPage</a></li>
         <li><a href="#">Order</a></li>

@@ -11,23 +11,8 @@
 </head>
 <body>
 <div class="bodyContainer">
+    <%@include file="jspf/navi.jspf"%>
     <div class="boardContainer">
-        <div class="loginNav">
-            <ul>
-                <c:if test="${sessionScope.uid == null}">
-                    <li><a href="<c:url value='/login/login'/>">Login</a></li>
-                    <li><a href="<c:url value='/login/register'/>">Join</a></li>
-                </c:if>
-                <c:if test="${sessionScope.uid != null}">
-                    <a href="<c:url value='/login/logout'/>">Logout</a>
-                </c:if>
-                <li><a class="myPage" href="<c:url value='/user/myPage'/>">MyPage</a></li>
-                <li><a href="#">Order</a></li>
-                <li><a href="#">Cart</a></li>
-                <li><a href="<c:url value="/board/boardList" />">Community</a></li>
-                <li><a href="#" class="menuIcon"><i class="fa fa-bars"></i></a></li>
-            </ul>
-        </div>
         <div class="headerContainer">
             <h3 class="title">${boardDto.btitle}</h3>
             <div class="nickname">${boardDto.bauthor}</div>

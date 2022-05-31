@@ -48,3 +48,8 @@ table {
 ul, ol, li {
     list-style: none;
 }
+
+.bodyContainer {
+    display: flex;
+    flex-flow: column;
+}

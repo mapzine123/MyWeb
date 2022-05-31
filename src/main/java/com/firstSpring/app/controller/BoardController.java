@@ -36,7 +36,7 @@ public class BoardController {
     @PostMapping("/write")
     public String writeBoard(HttpSession session, BoardDto boardDto, Model m) {
         try {
-            boardDto.setBauthor(session.getId());
+            boardDto.setBauthor((String)session.getAttribute("uid"));
             boardService.write(boardDto);
         } catch (Exception e) {
             e.printStackTrace();

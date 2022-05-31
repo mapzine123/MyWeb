@@ -1,5 +1,6 @@
 .bodyContainer {
-    margin-top: 53px;
+    display: flex;
+    flex-flow: column;
 }
 .searchForm {
     display: flex;
