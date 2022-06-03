@@ -15,6 +15,10 @@ public class CommentDto {
     public CommentDto() {
     }
 
+    public CommentDto(String comment) {
+        this.comment = comment;
+    }
+
     public CommentDto(Integer bno, Integer pcno, String comment, String commenter) {
         this.bno = bno;
         this.pcno = pcno;

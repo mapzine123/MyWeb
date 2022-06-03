@@ -40,13 +40,13 @@
            };
            // POST 방식으로 요청
            // XMLHttpRequest.open(요청방식, 요청 URL, 비동기 처리 여부)
-           httpRequest.open('POST', '/app/postAgeByName', true);
-           // 응답 타입 미리 정의
-           httpRequest.responseType = 'json';
+            httpRequest.open('POST', '/app/postAgeByName', true);
+            // 응답 타입 미리 정의
+            httpRequest.responseType = 'json';
 
-           httpRequest.setRequestHeader('Content-Type', 'application/json');
-           // JSON 형식의 객체를 stringify해서 서버로 전송
-           httpRequest.send(JSON.stringify(requestJson));
+            httpRequest.setRequestHeader('Content-Type', 'application/json');
+            // JSON 형식의 객체를 stringify해서 서버로 전송
+            httpRequest.send(JSON.stringify(requestJson));
         });
     }
 </script>

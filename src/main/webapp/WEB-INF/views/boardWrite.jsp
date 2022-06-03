@@ -16,9 +16,9 @@
     <%@include file="jspf/navi.jspf" %>
     <div class="contentContainer">
         <form action="<c:url value='/board/write'/>" method="POST">
-            <input type="text" name="btitle">
+            <input type="text" name="btitle" placeholder="제목을 입력하세요.">
             <br>
-            <textarea id="textarea" name="bcontent"></textarea>
+            <textarea id="textarea" name="bcontent" placeholder="본문을 입력하세요."></textarea>
             <br>
             <input type="submit" value="글쓰기">
         </form>
