@@ -48,7 +48,7 @@ public class ImageController {
 //        return null;
 
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-
+        int fetchTest = 0;
         if(isMultipart) {
             DiskFileItemFactory factory = new DiskFileItemFactory();
             ServletFileUpload upload = new ServletFileUpload(factory);
