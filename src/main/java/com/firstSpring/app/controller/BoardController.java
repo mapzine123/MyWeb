@@ -1,9 +1,11 @@
 package com.firstSpring.app.controller;
 
 import com.firstSpring.app.domain.BoardDto;
+import com.firstSpring.app.domain.CommentDto;
 import com.firstSpring.app.domain.PageHandler;
 import com.firstSpring.app.domain.SearchCondition;
 import com.firstSpring.app.service.BoardService;
+import com.firstSpring.app.service.CommentService;
 import org.apache.commons.fileupload.DiskFileUpload;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -13,10 +15,7 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,6 +23,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -32,6 +32,8 @@ import java.util.List;
 public class BoardController {
     @Autowired
     private BoardService boardService;
+    @Autowired
+    private CommentService commentService;
 
     @PostMapping("/write")
     public String writeBoard(HttpSession session, BoardDto boardDto, Model m) {
@@ -80,6 +82,22 @@ public class BoardController {
         }
         return "board";
     }
+
+    @ResponseBody
+    @PostMapping("/comment")
+    public String writeComment(@RequestBody CommentDto comment, @RequestBody int bno, HttpSession session, Model m) {
+        try {
+            System.out.println("comment = " + comment);
+            List<CommentDto> list = commentService.selectAll(bno);
+            comment.setCommenter((String)session.getAttribute("uid"));
+            list.add(comment);
+            m.addAttribute("list", list);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "sibal";
+    }
+
 
     @GetMapping("/uploadImage")
     public String uploadImage() {

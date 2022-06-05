@@ -8,10 +8,11 @@
     <title>title</title>
     <link rel="stylesheet" href="<c:url value='/css/reset.css'/>">
     <link rel="stylesheet" href="<c:url value='/css/board.css'/>">
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 </head>
 <body>
 <div class="bodyContainer">
-    <%@include file="jspf/navi.jspf"%>
+    <%@include file="jspf/navi.jspf" %>
     <div class="boardContainer">
         <div class="headerContainer">
             <h3 class="title">${boardDto.btitle}</h3>
@@ -31,14 +32,16 @@
                     <li><a href="#" class="commentSortBtn">최신순</a></li>
                 </ul>
             </div>
-            <div class="commentBox">
-                <div class="commenter">코멘터</div>
-                <span class="comment">댓글댓글댓글댓글댓글댓글댓글댓글</span>
-                <div class="commentInfo">
-                    <span class="update cInfo">2015.03.26. 15:15</span>
-                    <span class="pCommentBtn cInfo">답글쓰기</span>
+            <c:forEach var="comment" items="${list}">
+                <div class="commentBox">
+                    <div class="commenter">${comment.commenter}</div>
+                    <span class="comment">${comment.comment}</span>
+                    <div class="commentInfo">
+                        <span class="update cInfo">${comment.reg_date}</span>
+                        <span class="pCommentBtn cInfo">답글쓰기</span>
+                    </div>
                 </div>
-            </div>
+            </c:forEach>
             <c:if test="${sessionScope.uid != null}"> <!-- 로그인 해야 댓글 작성 가능 -->
                 <div class="commentWriteContainer">
                     <div class="author">${sessionScope.uid}</div>
@@ -57,6 +60,55 @@
     </div>
 </div>
 <script src="<c:url value="/js/board.js"/>"></script>
+<script type="text/javascript">
+    <%--const submitBtn = document.querySelector(".commentSubmit");--%>
+    <%--let httpRequest;--%>
+    <%--submitBtn.addEventListener("click", function() {--%>
+    <%--    console.log("clicked!");--%>
+    <%--    let requestJson = new Object();--%>
+    <%--    let comment = document.querySelector("#commentTextarea").value;--%>
+    <%--    let bno = ${boardDto.bno};--%>
+    <%--    requestJson.comment = comment;--%>
+    <%--    requestJson.bno = bno;--%>
+    <%--    httpRequest = new XMLHttpRequest();--%>
+    <%--    httpRequest.onreadystatechange = () => {--%>
+    <%--        if(httpRequest.readyState === XMLHttpRequest.DONE) {--%>
+    <%--            if(httpRequest.status === 200) {--%>
+    <%--                document.querySelector(".commentContainer").load(window.location.href + '.commentContainer');--%>
+    <%--            } else {--%>
+    <%--                console.log("error");--%>
+    <%--            }--%>
+    <%--        }--%>
+    <%--    };--%>
+    <%--    httpRequest.open('POST', 'app/board/comment', true);--%>
+    <%--    httpRequest.responseType = 'json';--%>
+    <%--    httpRequest.setRequestHeader('Content-Type', 'application/json');--%>
+    <%--    // httpRequest.send(JSON.stringify(requestJson));--%>
+    <%--    httpRequest.send();--%>
+    // });
+    $(document).ready(function () {
+        let commentText = document.querySelector("#commentTextarea");
+        let comment = {comment: commentText.value};
+        let bno = ${boardDto.bno};
+
+        $(".commentSubmit").click(function () {
+            $.ajax({
+                type: 'POST',
+                url: '<c:url value="/board/comment"/>',
+                headers: {"content-type": "application/json"},
+                dataType: 'text',
+                data: JSON.stringify(comment),
+                success: function (result) {
+                    document.querySelector(".commentContainer").load(window.location.href + '.commentContainer');
+                    console.log("success");
+                },
+                error : function() {
+                    console.log("error");
+                }
+            });
+        });
+    });
+</script>
 </body>
 
 </html>

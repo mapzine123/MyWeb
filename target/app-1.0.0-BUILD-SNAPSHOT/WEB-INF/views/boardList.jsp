@@ -23,7 +23,6 @@
             <input type="text" name="keyword" class="searchInput" value="${ph.sc.keyword}" placeholder="검색어를 입력해주세요"/>
             <input type="submit" class="searchButton" value="검색"/>
         </form>
-        <button class="writeBtn" onclick="location.href='<c:url value="/board/write"/>'">글쓰기</button>
     </div>
     <table class="boardList">
         <thead>
@@ -59,11 +58,12 @@
                     <a id="pageNum" class="page ${i == ph.sc.page ? "paging-active" : ""}" href="<c:url value="/board/boardList${ph.sc.getQueryString(i)}"/>">${i}</a>
                 </c:forEach>
                 <c:if test="${ph.showNext}">
-<%--                    <a id="showNext" class="page" href="<c:url value='/board/boardList${ph.sc.getQueryString(ph.engPage + 1)}'/>">></a>--%>
+                    <a id="showNext" class="page" href="<c:url value='/board/boardList${ph.sc.getQueryString(ph.engPage + 1)}'/>">></a>
                 </c:if>
             </c:if>
         </div>
     </div>
+    <button class="writeBtn" onclick="location.href='<c:url value="/board/write"/>'">글쓰기</button>
 </div>
 </body>
 <script src="<c:url value="js/boardList.js"/>"></script>

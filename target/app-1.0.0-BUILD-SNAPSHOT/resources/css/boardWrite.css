@@ -1,6 +1,6 @@
 .bodyContainer {
     box-sizing: content-box;
-    width: 80%;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
@@ -12,6 +12,7 @@ input[type="text"] {
 #textarea {
     width: 700px;
     height: 500px;
+    resize: none;
 }
 input[type="submit"] {
     width: 150px;
