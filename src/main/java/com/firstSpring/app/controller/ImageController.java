@@ -47,6 +47,33 @@ public class ImageController {
 //        }
 //        return null;
 
+//        boolean isMultipart = ServletFileUpload.isMultipartContent(request);
+//        int fetchTest = 0;
+//        if(isMultipart) {
+//            DiskFileItemFactory factory = new DiskFileItemFactory();
+//            ServletFileUpload upload = new ServletFileUpload(factory);
+//
+//            try {
+//                List<FileItem> items = upload.parseRequest(request);
+//
+//                for(FileItem item : items) {
+//                    if(!item.isFormField()) {
+//                        String fieldName = item.getFieldName();
+//                        String fileName = item.getName();
+//                        long sizeInBytes = item.getSize();
+//
+//                        if(!fileName.isEmpty()) {
+//                            File file = new File("c:/upload/" + fileName);
+//                            item.write(file);
+//                        }
+//                    }
+//                }
+//            } catch(Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        return null;
+
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
         int fetchTest = 0;
         if(isMultipart) {
