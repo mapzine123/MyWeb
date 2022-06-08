@@ -33,6 +33,23 @@ public class SimpleRestController {
         return "ajaxPost";
     }
 
+//    @GetMapping("/getAgeByName")
+//    @ResponseBody
+//    public Map<String, Object> getAgeByName(@RequestParam String inputName) {
+//        System.out.println(inputName);
+//
+//        Map<String, Integer> ageMap = new HashMap<>();
+//        ageMap.put("tom", 10);
+//        ageMap.put("bob", 20);
+//        ageMap.put("kim", 30);
+//
+//        Map<String, Object> returnMap = new HashMap<>();
+//        returnMap.put("name", inputName);
+//        returnMap.put("age", ageMap.get(inputName));
+//
+//        return returnMap;
+//    }
+
     @GetMapping("/getAgeByName")
     @ResponseBody
     public Map<String, Object> getAgeByName(@RequestParam String inputName) {
